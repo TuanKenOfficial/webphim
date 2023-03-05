@@ -16,9 +16,9 @@
         type="image/x-icon" />
     <meta name="revisit-after" content="1 days" />
     <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
-    <title>Phim hay 2021 - Xem phim hay nhất</title>
+    <title>Phim hay 2022 - Xem phim hay nhất</title>
     <meta name="description"
-        content="Phim hay 2021 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh" />
+        content="Phim hay 2022 - Xem phim hay nhất, xem phim online miễn phí, phim hot , phim nhanh" />
     <link rel="canonical" href="">
     <link rel="next" href="" />
     <meta property="og:locale" content="vi_VN" />
@@ -47,7 +47,7 @@
     </style>
     <style>
     #header .site-title {
-        background: url(https://images-platform.99static.com//_sRNa5Eotjd5HVfW27f8GR4VR5c=/350x211:850x711/fit-in/500x500/99designs-contests-attachments/88/88755/attachment_88755846) no-repeat top left;
+        background: url() no-repeat top left;
         background-size: contain;
         text-indent: -9999px;
     }
@@ -161,24 +161,24 @@
                                 </ul>
                             </li>
                             <li class="mega dropdown">
-                                <a title="Năm phim" href="#" data-toggle="dropdown" class="dropdown-toggle"
+                                <a title="Quốc Gia" href="#" data-toggle="dropdown" class="dropdown-toggle"
                                     aria-haspopup="true">Năm Phim <span class="caret"></span></a>
                                 <ul role="menu" class=" dropdown-menu">
-                                    @for($year = 2000;$year <= 2022; $year++) <li><a title="{{$year}}"
-                                            href="{{url('/nam/'.$year)}}">{{$year}}</a>
+                                    @foreach($year_movie as $key => $year_movie)
+                                    <li><a title="{{$year_movie}}"
+                                            href="{{url('/nam/'.$year_movie)}}">{{$year_movie}}</a></li>
+                                    @endforeach
+                                </ul>
                             </li>
-                            @endfor
 
-                        </ul>
-                        </li>
-                        <!-- <li><a title="Phim Lẻ" href="danhmuc.php">Phim Lẻ</a></li>
+                            <!-- <li><a title="Phim Lẻ" href="danhmuc.php">Phim Lẻ</a></li>
                             <li><a title="Phim Bộ" href="danhmuc.php">Phim Bộ</a></li>
                             <li><a title="Phim Chiếu Rạp" href="danhmuc.php">Phim Chiếu Rạp</a></li> -->
                         </ul>
                     </div>
-                    <ul class="nav navbar-nav navbar-left" style="background:#000;">
+                    <!-- <ul class="nav navbar-nav navbar-left" style="background:#000;">
                         <li><a href="#" onclick="locphim()" style="color: #ffed4d;">Lọc Phim</a></li>
-                    </ul>
+                    </ul> -->
                 </div>
             </nav>
             <div class="collapse navbar-collapse" id="search-form">
@@ -207,15 +207,13 @@
             <div class="row container">
                 <div class="widget about col-xs-12 col-sm-4 col-md-4">
                     <div class="footer-logo">
-                        <img class="img-responsive"
-                            src="https://images-platform.99static.com//_sRNa5Eotjd5HVfW27f8GR4VR5c=/350x211:850x711/fit-in/500x500/99designs-contests-attachments/88/88755/attachment_88755846"
-                            alt="Phim hay 2021- Xem phim hay nhất" />
+                        <img class="img-responsive" src="" />
                     </div>
                     Email : <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                        data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">sinb1812813@student.ctu.edu.vn</a><br>
+                        data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">nguyentuanken2022@gmail.com</a><br>
                     HotLine :
                     <a href="/cdn-cgi/l/email-protection" class="__cf_email__"
-                        data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">+84 3789 86231</a>
+                        data-cfemail="e5958d8c888d849ccb868aa58288848c89cb868a88">+84 855 792 196</a>
                 </div>
             </div>
         </div>

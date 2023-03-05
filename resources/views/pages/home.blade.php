@@ -55,9 +55,9 @@
             @foreach($movie_hot as $movie_hot)
             <article class="thumb grid-item post-38498">
                 <div class="halim-item">
-                    <a class="halim-thumb" href="{{route('chitiet', $movie_hot->slug)}}" title="Đại Thánh Vô Song">
+                    <a class="halim-thumb" href="{{route('chitiet', $movie_hot->slug)}}" title="{{$movie_hot->title}}">
                         <figure><img class="lazy img-responsive" src="{{asset('uploads/movie/'.$movie_hot->img)}}"
-                                alt="Đại Thánh Vô Song" title="Đại Thánh Vô Song"></figure>
+                                alt="{{$movie_hot->title}}" title="{{$movie_hot->title}}"></figure>
                         @if($movie_hot->resolution == 0)
                         <span class="status">HD</span>
                         @elseif($movie_hot->resolution == 1)
@@ -71,6 +71,7 @@
 
                         @endif
                         <span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                            {{$movie_hot->episode_count}}/{{$movie_hot->tap}} |
                             @if($movie_hot->cc == 0)
                             Thuyết Minh
                             @if($movie_hot->session != 0)
@@ -158,6 +159,7 @@
                             @endif
 
                             <span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                                {{$movie_home->episode_count}}/{{$movie_home->tap}}
                                 @if($movie_home->cc == 0)
                                 Thuyết Minh
                                 @if($movie_home->session != 0)

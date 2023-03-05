@@ -6,10 +6,10 @@
         <div class="panel-heading">
             <div class="row">
                 <div class="col-xs-6">
-                    <!-- <div class="yoast_breadcrumb hidden-xs"><span><span><a href="">{{$cate_slug->title}}</a>
-                                 » <span
-                                    class="breadcrumb_last" aria-current="page">2022</span> 
-                            </span></span></div> -->
+                    <div class="yoast_breadcrumb hidden-xs"><span><span><a href="">Lọc Phim</a>
+                                <!-- » <span
+                                    class="breadcrumb_last" aria-current="page">2022</span> -->
+                            </span></span></div>
                 </div>
             </div>
         </div>
@@ -20,7 +20,7 @@
     <main id="main-contents" class="col-xs-12 col-sm-12 col-md-8">
         <section>
             <div class="section-bar clearfix">
-                <h1 class="section-title"><span>{{$cate_slug->title}}</span></h1>
+                <h1 class="section-title"><span>Lọc Phim</span></h1>
             </div>
 
             <div class="section-bar clearfix">
@@ -70,7 +70,7 @@
             </div>
 
             <div class="halim_box">
-                @foreach($movie as $key => $movie_home)
+                @foreach($filter as $key => $movie_home)
                 <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-37606">
                     <div class="halim-item">
                         <a class="halim-thumb" href="{{route('chitiet', $movie_home->slug)}}">
@@ -129,7 +129,7 @@
                     <li><a class="next page-numbers" href=""><i class="hl-down-open rotate-right"></i></a></li> 
 
                 </ul> -->
-                {!! $movie->links("pagination::bootstrap-4 ")!!}
+                {!! $filter->links("pagination::bootstrap-4 ")!!}
             </div>
         </section>
     </main>

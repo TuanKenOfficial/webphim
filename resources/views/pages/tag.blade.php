@@ -19,6 +19,52 @@
             <div class="section-bar clearfix">
                 <h1 class="section-title"><span>{{$tag}}</span></h1>
             </div>
+            <div class="section-bar clearfix">
+                <div class="row">
+                    <form action="{{route('filter')}}" methoa="GET">
+
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <select name="theloai" class="form-control" id="exampleFormControlSelect1">
+                                    <option value="empty">Thể loại</option>
+                                    @foreach($genre as $g)
+                                    <option value="{{$g->id}}">{{$g->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+                                <select name="danhmuc" class="form-control" id="exampleFormControlSelect1">
+                                    <option value="empty">Danh mục</option>
+                                    @foreach($category as $c)
+                                    <option value="{{$c->id}}">{{$c->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="form-group">
+
+                                <select name="quocgia" class="form-control" id="exampleFormControlSelect1">
+                                    <option value="empty">Quốc Gia</option>
+                                    @foreach($country as $co)
+                                    <option value="{{$co->id}}">{{$co->title}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-md btn-defaul" value="Loc Phim">
+                            </div>
+                        </div>
+
+
+                    </form>
+                </div>
+            </div>
+
             <div class="halim_box">
                 @foreach($movie as $key => $movie_home)
                 <article class="col-md-3 col-sm-3 col-xs-6 thumb grid-item post-37606">
@@ -41,6 +87,7 @@
                             <span class="status">Trailer</span>
                             @endif
                             <span class="episode"><i class="fa fa-play" aria-hidden="true"></i>
+                                {{$movie_home->episode_count}}/{{$movie_home->tap}}
                                 @if($movie_home->cc == 0)
                                 Thuyết Minh
                                 @if($movie_home->session != 0)

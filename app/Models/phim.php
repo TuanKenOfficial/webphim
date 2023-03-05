@@ -24,4 +24,7 @@ class phim extends Model
    public function episode(){
     return $this->hasMany(tap::class, 'movie_id' );
    }
+   public function rating(){
+    return $this->hasMany(danhgia::class, 'movie_id' );
+   }
 }

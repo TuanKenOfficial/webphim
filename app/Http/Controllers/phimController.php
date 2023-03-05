@@ -56,7 +56,7 @@ class phimController extends Controller
         $country = quocgia::pluck('title', 'id');
         $genre = theloai::pluck('title', 'id');
         $list_genre = theloai::all();
-        $list = phim::with('country','genre', 'movie_genre', 'category')->orderBy('id', 'desc')->get();
+        $list = phim::with('country','genre', 'movie_genre', 'category')->withcount('episode')->orderBy('id', 'desc')->get();
 
         $path = public_path()."/json/";
         if(!is_dir($path)){

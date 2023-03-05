@@ -50,6 +50,9 @@ Route::post('/filter-sidebar', [Index::class, 'filter_sidebar']);
 Route::get('/filter-sidebar-default', [Index::class, 'filter_sidebar_default']);
 Route::get('/tim-kiem', [Index::class, 'tim_kiem'])->name('timkiem');
 Route::get('/select-movie', [Index::class, 'select_movie']);
+Route::get('/filter', [Index::class, 'filter'])->name('filter');
+Route::post('/add-rating', [Index::class, 'add_rating'])->name('add-rating');
+
 
 
 

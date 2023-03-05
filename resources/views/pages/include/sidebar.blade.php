@@ -12,6 +12,19 @@
                 <div id="halim-ajax-popular-post" class="popular-post">
 
                     @foreach($movie_trailer as $key => $movie_trailer)
+                    <?php
+                    $sum = 0;
+                    foreach($movie_trailer->rating as $r){
+                        $sum += $r->rating;
+                    }
+                   if($movie_trailer->rating_count == 0){
+                    $rating = 0;
+                   }else{
+                    $rating = $sum/$movie_trailer->rating_count;
+                   }
+                    
+                    ?>
+
                     <div class="item post-37176">
                         <a href="{{route('chitiet', $movie_trailer->slug)}}" title="{{$movie_trailer->title}}">
                             <div class="item-link">
@@ -21,13 +34,19 @@
                             </div>
                             <p class="title">{{$movie_trailer->title}}</p>
                         </a>
-                        <div class="viewsCount" style="color: #9d9d9d;">3.2K lượt xem</div>
-                        <div style="float: left;">
-                            <span class="user-rate-image post-large-rate stars-large-vang"
-                                style="display: block;/* width: 100%; */">
-                                <span style="width: 0%"></span>
-                            </span>
+                        <div class="viewsCount" style="color: #9d9d9d;">@if($movie_trailer->view_count == null)
+                            0 @else {{$movie_trailer->view_count}} @endif lượt xem</div>
+                        <div class="viewsCount" style="color: #9d9d9d;">
+                            @for($count=1; $count<=5; $count++) <?php
+                            if($count<=$rating){
+                                            $color='color:#ffcc00;' ; }
+                                        else { 
+                                            $color='color:#ccc;';
+                                        }
+                              ?> <span style="cursor:pointer; {{$color}} ">&#9733;</span>
+                                @endfor
                         </div>
+
                     </div>
                     @endforeach
 

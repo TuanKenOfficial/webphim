@@ -169,6 +169,7 @@
                     </thead>
 
                     <tbody>
+
                         @foreach($list as $key => $cate)
                         <tr>
 
@@ -198,7 +199,8 @@
                             @else
                             <td>Không hiện thị</td>
                             @endif
-                            <td>{{$cate->tap}}</td>
+
+                            <td>{{$cate->episode_count}}/{{$cate->tap}}</td>
 
                             @if($cate->resolution == 1)
                             <td>SD</td>
